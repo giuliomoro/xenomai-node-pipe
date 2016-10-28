@@ -12,3 +12,4 @@ Notes:
 * after a while the pipe will be full because Xenomai is writing faster than node reads. Killing node flushes the queue (apparently)
 * `fs.read()` is blocking: it will return only when data is available from the pipe
 * `readTask` and `writeTask` always stay in primary mode
+* it seems that `TM_INFINITE` (blocking read) does not work for `rt_pipe_read` (returns immediately with error)
